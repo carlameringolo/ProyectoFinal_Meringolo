@@ -1,0 +1,14 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Formulario - Actualizar Entrenador</h1>
+    <form action="{% url 'ActualizarEntrenador' entrenador.id %}" method="post">{% csrf_token %}
+        
+        {{form.as_p}}
+
+        <button type="submit">Actualizar</button>
+    </form>
+
+{% endblock contenidoQueCambia %}
+

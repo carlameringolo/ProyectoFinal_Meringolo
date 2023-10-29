@@ -1,0 +1,16 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Formulario - Eliminar Entrenador</h1>
+    <form action="{% url 'EliminarEntrenador' entrenador.id %}" method="post">
+        {% csrf_token %}
+        
+        <p>Esta seguro que quiere elimninar el entrenador?</p>
+
+        <button type="submit">Confirmar</button>
+        <button><a href="{% url 'ListarEntrenadores' %}">Cancelar</a></button>
+    </form>
+
+{% endblock contenidoQueCambia %}
+

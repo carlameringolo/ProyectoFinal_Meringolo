@@ -1,0 +1,40 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+   <!-- features Section
+   ================================================== -->
+   <section id="features">
+
+    <div class="row section-intro">
+       <div class="col-twelve with-bottom-line">
+
+           <h1>Lista de Entrenadores</h1>
+
+           <p class="lead">Aca podes acceder a la lista de nuestros entrenadores</p>
+
+       </div>   		
+   </div>
+
+   <ul>
+        {% for entrenador in entrenadores %}
+            <li>
+            
+                <a href="{% url 'DetalleEntrenador' entrenador.id %}">{{ entrenador.nombre }} {{ entrenador.apellido }} - {{ entrenador.especialidad }}</a>
+
+            </li>
+            <div style="display: flex; column-gap: 5px;">
+                <button>
+                    <a href="{% url 'EliminarEntrenador' entrenador.id %}">Eliminar</a>
+                </button>
+                <button>
+                    <a href="{% url 'ActualizarEntrenador' entrenador.id %}">Editar</a>
+                </button>
+            </div>
+        {% endfor %}
+    </ul>
+    
+    </section> <!-- /features -->
+
+{% endblock contenidoQueCambia %}
+
