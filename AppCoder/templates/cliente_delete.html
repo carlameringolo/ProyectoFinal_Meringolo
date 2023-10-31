@@ -1,0 +1,16 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Formulario - Eliminar Cliente</h1>
+    <form action="{% url 'EliminarCliente' cliente.id %}" method="post">
+        {% csrf_token %}
+        
+        <p>Esta seguro que quiere elimninar el cliente?</p>
+
+        <button type="submit">Confirmar</button>
+        <button><a href="{% url 'ListarClientes' %}">Cancelar</a></button>
+    </form>
+
+{% endblock contenidoQueCambia %}
+

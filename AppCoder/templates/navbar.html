@@ -10,10 +10,24 @@
              <ul class="main-navigation">
                  <li class="current"><a class="smoothscroll"  href="{% url 'Inicio' %}" title="">Inicio</a></li>
                  <li><a class="smoothscroll"  href="{% url 'CrearEntrenador' %}#process" >Entrenadores</a></li>
-                 <li><a class="smoothscroll"  href="#features" title="">Clientes</a></li>
-                 <li><a class="smoothscroll"  href="#pricing" title="">Clases</a></li>
-                 <li><a class="smoothscroll"  href="#faq" title="">Sedes</a></li>					
-                 <li class="highlight with-sep"><a href="#" title="">Iniciar Sesion</a></li>					
+                 <li><a class="smoothscroll"  href="{% url 'CrearCliente' %}#process"title="">Clientes</a></li>
+                 <li><a class="smoothscroll"  href="{% url 'CrearClase' %}#process" title="">Clases</a></li>
+                 <li><a class="smoothscroll"  href="{% url 'CrearSede' %}#process" title="">Sedes</a></li>
+                 <li><a class="smoothscroll"  href="{% url 'VerCalendario' %}#process" title="">Calendario</a></li>	
+                 <li><a class="smoothscroll"  href="{% url 'Contacto' %}#process" title="">Contacto</a></li>	
+                 
+                 {% if user.is_authenticated %}
+                     {% if url_avatar %}
+                        <img src="{{ url_avatar }}"  alt="avatar" style="width: 30px; height: 30px;">
+                    {% endif %}
+                     <p>Bienvenido {{user.username}}</p>
+                     <li><a class="btn btn-primary" href="{% url 'Logout' %}">Logout</a></li>
+                 {% else %}
+                     <li><a class="btn btn-primary" href="{% url 'Login' %}">Login</a></li>
+                 {% endif %}
+         
+                 <li><a class="btn btn-primary" href="{% url 'Registrar' %}">Crear usuario</a></li>
+     
              </ul>
          </nav>
 

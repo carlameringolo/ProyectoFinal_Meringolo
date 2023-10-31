@@ -1,0 +1,16 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Eliminar Clase</h1>
+    <form action="{% url 'EliminarClase' clase.id %}" method="post">
+        {% csrf_token %}
+        
+        <p>Esta seguro que quiere elimninar la clase?</p>
+
+        <button type="submit">Confirmar</button>
+        <button><a href="{% url 'ListarClases' %}">Cancelar</a></button>
+    </form>
+
+{% endblock contenidoQueCambia %}
+

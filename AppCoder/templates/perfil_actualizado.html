@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+    <h1>Perfil Actualizado</h1>
+    <table class="'table table-bordered">
+        <tr>
+            <td>Nombre:</td>
+            <td>{{ first_name }} {{ last_name }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ email }}</td>
+        </tr>
+    </table>
+</form>
+{% endblock contenidoQueCambia %}
+

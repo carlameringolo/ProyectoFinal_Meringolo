@@ -1,0 +1,71 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+   <!-- Process Section
+   ================================================== -->
+   <section id="process">  
+
+    <div class="row section-intro">
+        <div class="col-twelve with-bottom-line">
+
+            <h5>Formulario</h5>
+            <h1>Clientes</h1>
+
+            <p class="lead">En esta pagina se pueden ver los clientes actuales del gimnasio</p>
+
+        </div>   		
+    </div>
+
+    <div class="row process-content">
+
+        <div class="left-side" style="width: 30%;">
+
+            <div class="item" data-item="1" style="height: 50%">
+
+                <h5>Agregar Cliente</h5>
+
+                <form action="{% url 'CrearCliente' %}" method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+            
+                    <button type="submit">Enviar</button>
+                    <button>
+                        <a href="{% url 'ListarClientes' %}">Lista de Clientes</a>
+                    </button>
+                </form>
+             
+            </div>
+
+  
+        </div> <!-- /left-side -->
+        
+        <div class="right-side">
+                
+            <div class="item" data-item="3">
+
+                <h5>Create</h5>
+
+                <p>Lorem ipsum Cupidatat nostrud non cupidatat ut dolor id eiusmod non minim aute consectetur incididunt tempor irure aute consequat quis voluptate.</p>
+                    
+            </div>
+
+            <div class="item" data-item="4">
+
+                <h5>Publish</h5>
+
+                <p>Lorem ipsum Cupidatat nostrud non cupidatat ut dolor id eiusmod non minim aute consectetur incididunt tempor irure aute consequat quis voluptate.</p>
+                    
+            </div>
+
+        </div> <!-- /right-side -->  
+
+        <div class="image-part"></div>  			
+
+    </div> <!-- /process-content --> 
+
+</section> <!-- /process-->    
+
+
+{% endblock contenidoQueCambia %}
+

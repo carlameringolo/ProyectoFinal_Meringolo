@@ -1,0 +1,87 @@
+
+
+
+
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+   <!-- features Section
+   ================================================== -->
+   <section id="features">
+
+    <div class="row section-intro">
+       <div class="col-twelve with-bottom-line">
+
+           <h1>Lista de Clientes</h1>
+
+           <p class="lead">Aca podes acceder a la lista de nuestros clientes</p>
+
+       </div>   		
+   </div>
+
+   <table class="styled-table">
+
+        <tr>
+            <th style="color: aliceblue; text-align: center;">Lunes</th>
+            <th style="color: aliceblue; text-align: center;">Martes</th>
+            <th style="color: aliceblue; text-align: center;">Miercoles</th>
+            <th style="color: aliceblue; text-align: center;">Jueves</th>
+            <th style="color: aliceblue; text-align: center;">Viernes</th>
+            <th style="color: aliceblue;">Sabado</th>
+        </tr>
+
+        {% for clase in clases %}
+            {% if clase.dia %}
+                <tr>
+                    {% if clase.dia == 'Lunes' %}
+                        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; text-align: center;">{{ clase.nombre }}<br>{{ clase.hora_inicio }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+
+                    {% if clase.dia == 'Martes' %}
+                        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; text-align: center;">{{ clase.nombre }}<br>{{ clase.hora_inicio }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+
+                    {% if clase.dia == 'Miercoles' %}
+                        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; text-align: center;">{{ clase.nombre }}<br>{{ clase.hora_inicio }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+
+                    {% if clase.dia == 'Jueves' %}
+                        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; text-align: center;">{{ clase.nombre }}<br>{{ clase.hora_inicio }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+
+                    {% if clase.dia == 'Viernes' %}
+                        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; text-align: center;">{{ clase.nombre }}<br>{{ clase.hora_inicio }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+
+                    {% if clase.dia == 'Sabado' %}
+                        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; text-align: center;">{{ clase.nombre }}<br>{{ clase.hora_inicio }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                </tr>
+            {% endif %}
+        {% endfor %}
+
+    </table>
+        
+    </section> <!-- /features -->
+
+{% endblock contenidoQueCambia %}
+
+
+
+
+
+
+

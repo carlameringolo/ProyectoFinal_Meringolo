@@ -1,7 +1,22 @@
 {% extends 'padre.html' %}
 
 {% block contenidoQueCambia %}
-    <h1>Bienvenido</h1>
+    <h1 style="color: aliceblue;">Bienvenido</h1>
+
+    {{ mensaje }}
+
+    <div style="display: flex; column-gap: 5px;">
+        <button>
+            <a href="{% url 'EditarPerfil' %}">Editar Perfil</a>
+        </button>
+        <button>
+            <a href="{% url 'AgregarAvatar' %}">Agregar Avatar</a>
+        </button>
+        <button>
+            <a href="{% url 'AcercaDeMi' %}">Acerca de mi</a>
+        </button>
+    </div>
+
 {% endblock contenidoQueCambia %}
 
 

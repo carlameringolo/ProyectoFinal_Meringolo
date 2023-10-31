@@ -1,0 +1,12 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+    <h1 style="color: aliceblue;">Vista en detalle del cliente</h1>
+
+    <h4 style="color: beige;">Nombre: {{ cliente.nombre }}</h4>
+    <h4 style="color: beige;">Apellido: {{ cliente.apellido }}</h4>
+    <h4 style="color: beige;">Especialidad: {{ cliente.aptoFisico }}</h4>
+
+{% endblock contenidoQueCambia %}
+

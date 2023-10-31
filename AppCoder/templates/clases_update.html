@@ -2,8 +2,8 @@
 
 {% block contenidoQueCambia %}
 
-    <h1>Formulario - Actualizar Cliente</h1>
-    <form action="{% url 'ActualizarCliente' cliente.id %}" method="post">{% csrf_token %}
+    <h1>Formulario - Actualizar Clase</h1>
+    <form action="{% url 'ActualizarClase' clase.id %}" method="post">{% csrf_token %}
         
         {{form.as_p}}
 
@@ -11,4 +11,3 @@
     </form>
 
 {% endblock contenidoQueCambia %}
-

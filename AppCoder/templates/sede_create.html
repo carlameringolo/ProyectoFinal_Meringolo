@@ -10,9 +10,9 @@
         <div class="col-twelve with-bottom-line">
 
             <h5>Formulario</h5>
-            <h1>Entrenadores</h1>
+            <h1>Sedes</h1>
 
-            <p class="lead">Ofrecemos una variedad de entrenadores para facilitar tu experiencia en el gimnaio</p>
+            <p class="lead">En esta pagina se pueden ver las sedes del gimnasio</p>
 
         </div>   		
     </div>
@@ -23,15 +23,15 @@
 
             <div class="item" data-item="1" style="height: 50%">
 
-                <h5>Agregar Entrenador</h5>
+                <h5>Agregar Sede</h5>
 
-                <form action="{% url 'CrearEntrenador' %}" method="post">
+                <form action="{% url 'CrearSede' %}" method="post">
                     {% csrf_token %}
                     {{form.as_p}}
             
                     <button type="submit">Enviar</button>
                     <button>
-                        <a href="{% url 'ListarEntrenadores' %}">Lista de Entrenadores</a>
+                        <a href="{% url 'ListarSedes' %}">Lista de Sedes</a>
                     </button>
                 </form>
              
@@ -44,11 +44,18 @@
                 
             <div class="item" data-item="3">
 
-                <form method="POST">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <input type="'submit" value="'Submit Coment">
-                </form>
+                <h5>Create</h5>
+
+                <p>Lorem ipsum Cupidatat nostrud non cupidatat ut dolor id eiusmod non minim aute consectetur incididunt tempor irure aute consequat quis voluptate.</p>
+                    
+            </div>
+
+            <div class="item" data-item="4">
+
+                <h5>Publish</h5>
+
+                <p>Lorem ipsum Cupidatat nostrud non cupidatat ut dolor id eiusmod non minim aute consectetur incididunt tempor irure aute consequat quis voluptate.</p>
+                    
             </div>
 
         </div> <!-- /right-side -->  
@@ -61,4 +68,3 @@
 
 
 {% endblock contenidoQueCambia %}
-

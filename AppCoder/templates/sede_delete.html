@@ -1,0 +1,16 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Eliminar Sede</h1>
+    <form action="{% url 'EliminarSede' sede.id %}" method="post">
+        {% csrf_token %}
+        
+        <p>Esta seguro que quiere elimninar la sede?</p>
+
+        <button type="submit">Confirmar</button>
+        <button><a href="{% url 'ListarSedes' %}">Cancelar</a></button>
+    </form>
+
+{% endblock contenidoQueCambia %}
+
